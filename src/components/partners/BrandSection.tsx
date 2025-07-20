@@ -80,11 +80,6 @@ export default function BrandSection() {
                     {brands.map((brand, index) => (
                         <div key={index} className="flex flex-col items-center space-y-4">
                             <div className="bg-white  p-6 w-full h-24 flex items-center justify-center">
-                                {/* <img
-                                    src={brand.logo || "/placeholder.svg"}
-                                    alt={brand.name}
-                                    className="max-w-full max-h-full object-contain min-h-[120px]"
-                                /> */}
                                 <Image
                                     src={brand.logo || "/placeholder.svg"}
                                     alt={brand.name || "Brand logo"}
