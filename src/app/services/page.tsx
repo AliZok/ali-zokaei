@@ -185,7 +185,15 @@ export default function Services() {
                                     <div onClick={() => activeTab(item, index)} key={index} className={`${index == activeTabIndex ? 'bg-black text-white' : 'bg-[#e3e3e3]'} relative flex-1 flex-auto`}>
                                         <div className="flex gap-3 items-center justify-center py-10 px-2 cursor-pointer">
                                             <div>
-                                                <img className="w-[50px]" src={item.icon} alt="" />
+                                                <Image
+                                                    src={item.icon}
+                                                    alt={`${item.name} icon`}
+                                                    width={50}
+                                                    height={50}  // Square ratio (adjust if needed)
+                                                    className="w-[50px] h-[50px]"  // Ensures proper sizing
+                                                    quality={60}  // Lower quality for small icons
+                                                    loading="lazy"  // Lazy load non-critical icons
+                                                    />
                                             </div>
                                             <div>{item.title}</div>
                                         </div>
@@ -732,7 +740,15 @@ export default function Services() {
                 </main>
                 <div className="relative">
                     <div className="absolute right-0 bottom-0 -z-1 ">
-                        <img className="min-w-[200px] max-w-[300px] " src="https://www.abudawood.com/wp-content/themes/abudawood/assets/img/path_bg.png" alt="" />
+                        <Image
+                        src="https://www.abudawood.com/wp-content/themes/abudawood/assets/img/path_bg.png"
+                        alt="Decorative path background"
+                        width={300}
+                        height={200} // 3:2 aspect ratio
+                        className="min-w-[200px] max-w-[300px]"
+                        quality={80}
+                        priority={false}
+                        />
                     </div>
                 </div>
             </div>

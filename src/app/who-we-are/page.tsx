@@ -113,7 +113,15 @@ export default function Home() {
                                                 </h2>
                                             </div>
                                             <div className="lg:block hidden">
-                                                <img className="w-[280px]" src="https://www.abudawood.com/wp-content/themes/abudawood/assets/img/owners/mission.png" alt="" />
+                                                <Image
+                                                src="https://www.abudawood.com/wp-content/themes/abudawood/assets/img/owners/mission.png"
+                                                alt="Company mission illustration"
+                                                width={280}
+                                                height={280}  // Calculate based on original aspect ratio
+                                                className="w-[280px]"
+                                                quality={85}
+                                                priority={false} // Set to true if this is above-the-fold content
+                                                />
                                             </div>
                                         </div>
                                         <div className="lg:col-span-8 col-span-12">
@@ -166,7 +174,14 @@ export default function Home() {
                                             <div className="value-card p-3 mb-3" key={index}>
                                                 <div className="border-b-[2px] border-[#666]">
                                                     <div className="mb-3">
-                                                        <img src={itemValue.icon} className="w-[50px] h-[50px]"></img>
+                                                            
+                                                        <Image
+                                                            src={itemValue.icon}
+                                                            alt={`${itemValue.name} icon`} 
+                                                            width={50}
+                                                            height={50}
+                                                            className="w-[50px] h-[50px]"
+                                                            />
                                                     </div>
                                                     <div className="mb-2">
                                                         <h3 className="font-bold text-[18px]">
@@ -211,7 +226,16 @@ export default function Home() {
                                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-start">
                                         <div className="">
                                             <div className="relative w-full rounded-lg">
-                                                <img src="https://t3.ftcdn.net/jpg/06/45/52/36/360_F_645523665_dPDKIgzU6YWDX8fxxcX086WF0vU62fM5.jpg" alt="" className="max-h-[495px]" />
+                                                <Image
+                                                src="https://t3.ftcdn.net/jpg/06/45/52/36/360_F_645523665_dPDKIgzU6YWDX8fxxcX086WF0vU62fM5.jpg"
+                                                alt="Descriptive text about the image content" // Always add meaningful alt text
+                                                width={360} // Matches the original image width from URL
+                                                height={495} // Matches your max-h-[495px] constraint
+                                                className="max-h-[495px] w-auto object-contain" // Maintain aspect ratio
+                                                quality={80} // Optimal quality setting
+                                                priority={true} // If this is above-the-fold content
+                                                sizes="(max-width: 768px) 100vw, 50vw" // Responsive sizing
+                                                />
                                             </div>
                                             <div className="w-full translate-y-[-20px]">
                                                 <h3 className="text-3xl sm:text-4xl lg:text-3xl font-bold text-gray-900 mb-1">Andy Nueman</h3>

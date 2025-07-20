@@ -1,3 +1,4 @@
+import Image from "next/image";
 export default function BrandSection() {
     const brands = [
         {
@@ -79,11 +80,23 @@ export default function BrandSection() {
                     {brands.map((brand, index) => (
                         <div key={index} className="flex flex-col items-center space-y-4">
                             <div className="bg-white  p-6 w-full h-24 flex items-center justify-center">
-                                <img
+                                {/* <img
                                     src={brand.logo || "/placeholder.svg"}
                                     alt={brand.name}
                                     className="max-w-full max-h-full object-contain min-h-[120px]"
-                                />
+                                /> */}
+                                <Image
+                                    src={brand.logo || "/placeholder.svg"}
+                                    alt={brand.name || "Brand logo"}
+                                    width={200}  // Set appropriate maximum width
+                                    height={120} // Matches your min-h-[120px]
+                                    className="max-w-full max-h-full object-contain min-h-[120px]"
+                                    style={{
+                                        objectFit: 'contain',
+                                        height: 'auto'
+                                    }}
+                                    quality={80}
+                                    />
                             </div>
                             <div className="bg-brand text-black font-semibold px-6 py-2 rounded-md text-sm w-full text-center">
                                 {brand.location}

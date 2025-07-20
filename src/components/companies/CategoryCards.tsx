@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react"
 import { Truck, DollarSign, Settings, Users, PackageOpen, ShoppingCart } from "lucide-react"
 import { ArrowUp } from "iconsax-reactjs"
-
+import Image from "next/image"
 const categories = [
     {
         id: "logistic",
@@ -99,7 +99,15 @@ export default function CategoryCards({ activeSection }) {
                         href={`#${category.id}`}
                     >
 
-                        <img src={category.icon} className="mb-3 w-[60px]" />
+                     <Image
+  src={category.icon}
+  alt={`${category.name} icon`}  // Descriptive alt text
+  width={60}
+  height={60}  // Assuming square icon (adjust if different)
+  className="mb-3 w-[60px] h-auto"  // Maintain aspect ratio
+  quality={65}  // Lower quality for small icons
+  loading="lazy"  // Lazy load if not critical
+/>
                         <h3 className={`${titleClasses} mb-1`} >
                             {category.title}
                         </h3>

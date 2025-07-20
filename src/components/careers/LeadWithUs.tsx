@@ -69,7 +69,7 @@ export function LeadForm() {
 
   return (
     <div className="max-w-2xl mx-auto p-8 pt-10 bg-black text-white rounded-b-lg">
-      <h1 className="text-3xl font-bold text-center mb-8 text-white border-b border-[#084e2a] pb-3">Lead with us</h1>
+      <h1 className="text-3xl font-bold text-center mb-8 text-white border-b border-[#4b4e08] pb-3">Lead with us</h1>
 
       <form onSubmit={handleSubmit} className="space-y-6">
         {/* Name and Gender Row */}

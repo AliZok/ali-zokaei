@@ -1,6 +1,6 @@
 import React from "react";
 import Slider from "react-slick";
-
+import Image from "next/image";
 function CardSlider() {
   const settings = {
     dots: true,
@@ -49,7 +49,19 @@ function CardSlider() {
       <Slider {...settings}>
         {images.map((image, index) => (
           <div key={index} className="px-1 text-center">
-            <img src={image.src} className="max-w-[140px] !inline-block" alt={image.alt} />
+            <Image
+              src={image.src}
+              alt={image.alt || 'Default image description'} // Fallback alt text
+              width={140} // Matches your max-w-[140px]
+              height={140} // Calculate height
+              className="max-w-[140px] !inline-block"
+              style={{
+                display: 'inline-block', // Ensures inline behavior
+                height: 'auto' // Maintains aspect ratio
+              }}
+              quality={75}
+              loading="lazy"
+            />
           </div>
         ))}
       </Slider>

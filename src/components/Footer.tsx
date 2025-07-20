@@ -1,5 +1,5 @@
 import Link from 'next/link';
-
+import Image from 'next/image';
 
 export default function Footer() {
     return (
@@ -8,7 +8,16 @@ export default function Footer() {
                 <div className="py-6 ">
                     <div className="flex justify-between mb-6 items-center pb-8 border-b border-gray-700">
                         <div>
-                            <img src="images/Yello_logo_yellow_rgb.png" className="w-[80px]" alt="" />
+                            <Image
+  src="/images/Yello_logo_yellow_rgb.png" // Note the leading slash for public folder
+  alt="Yello company logo" // Meaningful alt text
+  width={80}
+  height={80} // Assuming square logo (adjust if different ratio)
+  className="w-[80px] h-auto" // Maintain aspect ratio
+  quality={75} // Optimal for logos
+  priority={true} // Logos are usually important
+/>
+
                         </div>
                         <div>
                             <div>

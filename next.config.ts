@@ -8,7 +8,7 @@ const nextConfig: NextConfig = {
     ignoreBuildErrors: true,
   },
   images: {
-    domains: ['www.abudawood.com', 'upload.wikimedia.org', 'media.npr.org', 'www.neh.gov'],
+    domains: ['www.abudawood.com', 'upload.wikimedia.org', 'media.npr.org', 'www.neh.gov',"t3.ftcdn.net"],
   },
 };
 

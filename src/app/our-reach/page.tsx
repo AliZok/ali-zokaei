@@ -4,7 +4,7 @@
 import OurReachSlider from "@/components/our-reach/OurReachSlider"
 import SEO from '@/components/SEO';
 import ScrollToTop from '@/components/goTopScroll';
-
+import Image from 'next/image'
 
 export default function OurReach() {
 
@@ -54,16 +54,33 @@ export default function OurReach() {
                                 </div>
                             </div>
                         </div>
+
                         <div className="absolute z-1 w-full right-0 md:top-0 top-[285px] text-right">
-                            <img className="inline-block" src="https://www.abudawood.com/wp-content/themes/abudawood/assets/img/saudimap.png" alt="" />
-                        </div>
+                            <Image
+                                src="https://www.abudawood.com/wp-content/themes/abudawood/assets/img/saudimap.png"
+                                alt="Saudi Arabia map"
+                                width={800}  // Set appropriate width
+                                height={600} // Set appropriate height
+                                className="inline-block"
+                                priority={true} // Optional: if this image is above the fold
+                            />
+                            </div>
                     </div>
 
                 </main>
                 <div className="relative">
-                    <div className="absolute right-0 bottom-0 -z-1 ">
-                        <img className="min-w-[200px] max-w-[300px] " src="https://www.abudawood.com/wp-content/themes/abudawood/assets/img/bg-growing-img.png" alt="" />
-                    </div>
+
+                    <div className="absolute right-0 bottom-0 -z-1">
+                        <Image
+                            src="https://www.abudawood.com/wp-content/themes/abudawood/assets/img/bg-growing-img.png"
+                            alt="Decorative background element"
+                            width={300}  // Matches your max-w-[300px]
+                            height={200} // Approximate height maintaining aspect ratio
+                            className="min-w-[200px] max-w-[300px]"
+                            quality={75} // Optional: reduces file size while maintaining quality
+                            priority={false} // Set to true if this is above-the-fold
+                        />
+                        </div>
                 </div>
             </div>
             <ScrollToTop></ScrollToTop>

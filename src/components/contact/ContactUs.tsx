@@ -3,7 +3,7 @@
 import type React from "react"
 
 import { useState } from "react"
-
+import Image from "next/image"
 export function ContactUs() {
   const [formData, setFormData] = useState({
     name: "",
@@ -138,7 +138,17 @@ export function ContactUs() {
         >
           
           <div>Send</div>
-          <img className="w-[50px]" src="https://www.abudawood.com/wp-content/themes/abudawood/assets/img/arrow_send.png" alt="" />
+            <Image
+              src="https://www.abudawood.com/wp-content/themes/abudawood/assets/img/arrow_send.png"
+              alt="Send arrow icon" // Meaningful alt text
+              width={50}
+              height={50} // Assuming square aspect ratio (adjust if needed)
+              className="w-[50px] h-auto" // Maintain aspect ratio
+              quality={60} // Optimal for small icons
+              loading="lazy" // Lazy load if non-critical
+            />
+       
+       
         </button>
 
       </form>

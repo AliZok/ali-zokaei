@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react'
 import { HamburgerMenu, CloseSquare } from "iconsax-reactjs"
 import Link from 'next/link'
 import { usePathname } from 'next/navigation';
-
+import Image from 'next/image';
 
 
 export default function Header() {
@@ -70,7 +70,16 @@ export default function Header() {
             <div className="my-container px-0">
                 <div className="flex w-full items-center justify-between py-2 border-b border-b-[1px] border-gray-700 px-2 md:px-0">
                     <div>
-                        <img src="images/Yello_logo_yellow_rgb.png" className="w-[80px]" alt="" />
+                     
+                        <Image
+  src="/images/Yello_logo_yellow_rgb.png"
+  alt="Yello company logo" 
+  width={80}
+  height={80}
+  className="w-[80px] h-auto"
+  quality={75}
+  priority={true}
+/>
                     </div>
                     <div className=" gap-[2vw] text-white font-[600] hidden lg:flex">
                         {headerItems.map((item) => {
