@@ -52,10 +52,6 @@ export const myFunctions = {
             const [year, month, day] = datePart.split('/').map(Number);
             const [hours, minutes] = timePart.split(':').map(Number);
 
-            const gregorianDate = jalaaliToDateObject(year, month, day, hours, minutes);
-
-            const formattedGregorian = gregorianDate.toString();
-
             const approximateDate = new Date(
                 toGregorian(year, month, day).gy,
                 toGregorian(year, month, day).gm - 1,
@@ -73,10 +69,6 @@ export const myFunctions = {
             const [datePart, timePart] = persianDateTime.split(' ');
             const [year, month, day] = datePart.split('/').map(Number);
             const [hours, minutes] = timePart.split(':').map(Number);
-
-            const gregorianDate = jalaaliToDateObject(year, month, day, hours, minutes);
-
-            const formattedGregorian = gregorianDate.toString();
 
             const approximateDate = new Date(
                 toGregorian(year, month, day).gy,
