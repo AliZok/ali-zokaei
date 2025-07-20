@@ -1,0 +1,96 @@
+a:hover {
+  color: var(--brand);
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  border-radius: 10px;
+  background-color: rgba(127, 255, 212, 0);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgb(118, 139, 129);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--brand)
+}
+
+.deep-shadow {
+  box-shadow: 5px 5px 12px 0px rgba(0, 0, 0, 0.4);
+}
+
+.change-hover {
+  &:hover {
+    .befor-hover {
+      display: none;
+    }
+
+    .after-hover {
+      display: block;
+    }
+  }
+}
+
+.after-hover {
+  display: none;
+}
+
+
+// AdInformations
+.AdInformations {
+  padding-top: 140px !important;
+  padding-bottom: 150px !important;
+  background: url(https://www.abudawood.com/wp-content/themes/abudawood/assets/img/Globe.png);
+  background-position: 93% 50%;
+  background-size: 25%;
+  position: relative;
+  background-repeat: no-repeat
+}
+
+
+
+.CardSlider .slick-dots li button:before {
+  background: var(--brand) !important;
+  width: 15px !important;
+  height: 15px !important;
+  content: "" !important;
+  border-radius: 50%;
+}
+
+.CardSlider .slick-slider {
+  padding-bottom: 30px;
+}
+
+.SlideGallery {
+  padding: 100px 0;
+  background: url("https://www.abudawood.com/wp-content/themes/abudawood/assets/img/owners/bg_owner.png") left top no-repeat;
+  background-size: 100%;
+  position: relative;
+}
+
+.over-values {
+  background-color: black;
+  padding: 150px 0;
+  background: url("https://www.abudawood.com/wp-content/themes/abudawood/assets/img/hero-carousel/whowearebg.png") center top no-repeat;
+  background-size: cover;
+}
+
+.value-card:hover {
+  background-image: linear-gradient(to bottom, #9c8823, #776a22, #544d1e, #35321a70, #19181303);
+
+  .opacity-0 {
+    opacity: 1;
+
+  }
+}
+
+.AboutSection.back-shape {
+  background: url("/images/test/shape_about.png") left top no-repeat;
+  background-size: 50%;
+  position: relative;
+  background-color: #000 !important;
+}
