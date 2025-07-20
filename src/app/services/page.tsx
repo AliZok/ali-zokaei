@@ -25,25 +25,30 @@ export default function Services() {
         {
             title: "Key Account Management Services",
             icon: "https://www.abudawood.com/wp-content/themes/abudawood/assets/img/icons/keyaccount_black.png",
+            iconActive: "https://www.abudawood.com/wp-content/themes/abudawood/assets/img/icons/keyaccount_white.png",
             isActive: true,
         },
         {
             title: "Retail Sales Services",
             icon: "https://www.abudawood.com/wp-content/themes/abudawood/assets/img/icons/retailsales_black.png",
+            iconActive: "https://www.abudawood.com/wp-content/themes/abudawood/assets/img/icons/keyaccount_white.png",
             isActive: false,
         },
         {
             title: "Van Sales Services",
+            iconActive: "https://www.abudawood.com/wp-content/themes/abudawood/assets/img/icons/van_white.png",
             icon: "https://www.abudawood.com/wp-content/themes/abudawood/assets/img/icons/van_black.png",
             isActive: false,
         },
         {
             title: "Logistics Services",
+            iconActive: "https://www.abudawood.com/wp-content/themes/abudawood/assets/img/icons/logisitcis_white.png",
             icon: "https://www.abudawood.com/wp-content/themes/abudawood/assets/img/icons/logisitcis_black.png",
             isActive: false,
         },
         {
             title: "Hello World",
+            iconActive: "https://www.abudawood.com/wp-content/themes/abudawood/assets/img/icons/merchandise_white.png",
             icon: "https://www.abudawood.com/wp-content/themes/abudawood/assets/img/icons/merchandise_black.png",
             isActive: false,
         },
@@ -185,15 +190,30 @@ export default function Services() {
                                     <div onClick={() => activeTab(item, index)} key={index} className={`${index == activeTabIndex ? 'bg-black text-white' : 'bg-[#e3e3e3]'} relative flex-1 flex-auto`}>
                                         <div className="flex gap-3 items-center justify-center py-10 px-2 cursor-pointer">
                                             <div>
-                                                <Image
-                                                    src={item.icon}
-                                                    alt={`${item.name} icon`}
-                                                    width={50}
-                                                    height={50}  // Square ratio (adjust if needed)
-                                                    className="w-[50px] h-[50px]"  // Ensures proper sizing
-                                                    quality={60}  // Lower quality for small icons
-                                                    loading="lazy"  // Lazy load non-critical icons
-                                                    />
+                                                {
+                                                    index == activeTabIndex ? (
+                                                    <Image
+                                                        src={item.iconActive}
+                                                        alt={`${item.name} icon`}
+                                                        width={50}
+                                                        height={50}  
+                                                        className="w-[50px] h-[50px]" 
+                                                        quality={60} 
+                                                        loading="lazy" 
+                                                        />
+                                                    ) : (
+                                                    <Image
+                                                        src={item.icon}
+                                                        alt={`${item.name} icon`}
+                                                        width={50}
+                                                        height={50}  
+                                                        className="w-[50px] h-[50px]" 
+                                                        quality={60} 
+                                                        loading="lazy" 
+                                                        />
+                                                    )
+                                                }
+                                               
                                             </div>
                                             <div>{item.title}</div>
                                         </div>
