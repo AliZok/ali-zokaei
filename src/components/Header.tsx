@@ -1,15 +1,19 @@
-"use client";
+'use client'
+
 import { useState, useEffect } from 'react'
 import { HamburgerMenu, CloseSquare } from "iconsax-reactjs"
 import Link from 'next/link'
 import { usePathname } from 'next/navigation';
 import Image from 'next/image';
 
-
 export default function Header() {
+
     const [backHeader, setBackHeader] = useState<boolean>(false);
     const [mobileMenu, setMobileMenu] = useState<boolean>(false);
     const pathname = usePathname();
+   
+    
+   
     const [headerItems, setHeaderItems] = useState([
         {
             title: 'Home',
@@ -107,7 +111,7 @@ export default function Header() {
                     <div className='bg-white h-[88vh] rounded-lg p-4'>
                         {headerItems.map((item) => {
                             return (
-                                <Link onClick={closeMobileMenu} href={item.path} className={`${item.title == 'Home' ? 'text-brand' : ''} cursor-pointer hover:text-brand mb-4 block`} key={item.title} prefetch>
+                                <Link onClick={closeMobileMenu} href={item.path} className={`${item.path == pathname ? 'text-brand' : ''} cursor-pointer hover:text-brand mb-4 block`} key={item.title} prefetch>
                                     {item.title}
                                 </Link>
                             )
