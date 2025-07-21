@@ -14,13 +14,14 @@ import { Collapse } from "@/components/Collaps"
 interface SlideDownItem {
     id: string
     title: string
-    content: React.ReactNode
     isOpen?: boolean
 }
 
 export default function Services() {
     const [activeTabIndex, setActiveTabIndex] = useState(0)
     const [activeChildIndex, setActiveChildIndex] = useState(0)
+    const [activeChildIndex2, setActiveChildIndex2] = useState(0)
+    const [activeContentId, setActiveContentId] = useState("")
     const TabItems = [
         {
             title: "Key Account Management Services",
@@ -56,83 +57,281 @@ export default function Services() {
 
     function activeTab(item, index) {
         setActiveTabIndex(index)
-        setActiveChildIndex(0)
+        // setActiveChildIndex(0)
 
     }
-    function activeSection(number) {
-        setActiveChildIndex(number)
-    }
 
-    const [slideDownItems] = useState<SlideDownItem[]>([
+
+    const [slideDownItems, setSlideDownItems] = useState<SlideDownItem[]>([
         {
             id: "communication",
             title: "Enhancing Your Business Relationships",
-            content: (
-                <div className="p-4 space-y-3">
-                    <p>Our communication strategy ensures that all stakeholders are kept informed through:</p>
-                    <ul className="list-disc pl-5 space-y-2">
-                        <li>Regular progress reports and updates</li>
-                        <li>Scheduled review meetings with key decision makers</li>
-                        <li>Transparent sharing of performance metrics</li>
-                        <li>Continuous feedback loops for service improvement</li>
-                    </ul>
-                </div>
-            ),
+            itemsOf: [
+                {
+                    titleItem: "Sale Drivers",
+                    contentItem: " We focus on enhancing all aspects of your brand's sales performance at retail locations.",
+                    isActive: true,
+                },
+                {
+                    titleItem: "Comperhensive",
+                    contentItem: "Hello world",
+                    isActive: false,
+                },
+            ],
             isOpen: false,
         },
         {
             id: "approach",
             title: "Efficient and Strategic Approach",
-            content: (
-                <div className="p-4 space-y-3">
-                    <p>We optimize resource allocation and strategic planning through:</p>
-                    <ul className="list-disc pl-5 space-y-2">
-                        <li>Data-driven decision making processes</li>
-                        <li>Streamlined operational workflows</li>
-                        <li>Proactive problem identification and resolution</li>
-                        <li>Strategic alignment with your business objectives</li>
-                    </ul>
-                </div>
-            ),
+             itemsOf: [
+                {
+                    titleItem: "Sale Drivers",
+                    contentItem: " We focus on enhancing all aspects of your brand's sales performance at retail locations.",
+                    isActive: true,
+                },
+                {
+                    titleItem: "Comperhensive",
+                    contentItem: "Hello world",
+                    isActive: false,
+                },
+            ],
             isOpen: false,
         },
     ])
 
-
-    const [slideDownItems2] = useState<SlideDownItem[]>([
+     const [slideDownItems2, setSlideDownItems2] = useState<SlideDownItem[]>([
+        {
+            id: "communication test",
+            title: "Relationships",
+            itemsOf: [
+                {
+                    titleItem: "Sale Drivers",
+                    contentItem: " We focus on enhancing all aspects of your brand's sales performance at retail locations.",
+                    isActive: true,
+                },
+                {
+                    titleItem: "Comperhensive",
+                    contentItem: "Hello world",
+                    isActive: false,
+                },
+            ],
+            isOpen: false,
+        },
+        {
+            id: "approach test",
+            title: "Approach",
+             itemsOf: [
+                {
+                    titleItem: "Sale Drivers",
+                    contentItem: " We focus on enhancing all aspects of your brand's sales performance at retail locations.",
+                    isActive: true,
+                },
+                {
+                    titleItem: "Comperhensive",
+                    contentItem: "Hello world",
+                    isActive: false,
+                },
+            ],
+            isOpen: false,
+        },
+    ])
+ const [slideDownItems3, setSlideDownItems3] = useState<SlideDownItem[]>([
         {
             id: "communication",
-            title: "Hello test",
-            content: (
-                <div className="p-4 space-y-3">
-                    <p>Our communication strategy ensures that all stakeholders are kept informed through:</p>
-                    <ul className="list-disc pl-5 space-y-2">
-                        <li>Regular progress reports and updates</li>
-                        <li>Scheduled review meetings with key decision makers</li>
-                        <li>Transparent sharing of performance metrics</li>
-                        <li>Continuous feedback loops for service improvement</li>
-                    </ul>
-                </div>
-            ),
+            title: "Enhancing Your Business Relationships",
+            itemsOf: [
+                {
+                    titleItem: "Sale Drivers",
+                    contentItem: " We focus on enhancing all aspects of your brand's sales performance at retail locations.",
+                    isActive: true,
+                },
+                {
+                    titleItem: "Comperhensive",
+                    contentItem: "Hello world",
+                    isActive: false,
+                },
+            ],
             isOpen: false,
         },
         {
             id: "approach",
             title: "Efficient and Strategic Approach",
-            content: (
-                <div className="p-4 space-y-3">
-                    <p>We optimize resource allocation and strategic planning through:</p>
-                    <ul className="list-disc pl-5 space-y-2">
-                        <li>Data-driven decision making processes</li>
-                        <li>Streamlined operational workflows</li>
-                        <li>Proactive problem identification and resolution</li>
-                        <li>Strategic alignment with your business objectives</li>
-                    </ul>
-                </div>
-            ),
+             itemsOf: [
+                {
+                    titleItem: "Sale Drivers",
+                    contentItem: " We focus on enhancing all aspects of your brand's sales performance at retail locations.",
+                    isActive: true,
+                },
+                {
+                    titleItem: "Comperhensive",
+                    contentItem: "Hello world",
+                    isActive: false,
+                },
+            ],
             isOpen: false,
         },
     ])
+
+      const [slideDownItems4, setSlideDownItems4] = useState<SlideDownItem[]>([
+        {
+            id: "communication test",
+            title: "Relationships",
+            itemsOf: [
+                {
+                    titleItem: "Sale Drivers",
+                    contentItem: " We focus on enhancing all aspects of your brand's sales performance at retail locations.",
+                    isActive: true,
+                },
+                {
+                    titleItem: "Comperhensive",
+                    contentItem: "Hello world",
+                    isActive: false,
+                },
+            ],
+            isOpen: false,
+        },
+        {
+            id: "approach test",
+            title: "Approach",
+             itemsOf: [
+                {
+                    titleItem: "Sale Drivers",
+                    contentItem: " We focus on enhancing all aspects of your brand's sales performance at retail locations.",
+                    isActive: true,
+                },
+                {
+                    titleItem: "Comperhensive",
+                    contentItem: "Hello world",
+                    isActive: false,
+                },
+            ],
+            isOpen: false,
+        },
+    ])
+     const [slideDownItems5, setSlideDownItems5] = useState<SlideDownItem[]>([
+        {
+            id: "communication test",
+            title: "Relationships test",
+            itemsOf: [
+                {
+                    titleItem: "Sale Drivers test",
+                    contentItem: " We focus on enhancing all aspects of your brand's sales performance at retail locations.",
+                    isActive: true,
+                },
+                {
+                    titleItem: "Comperhensive test",
+                    contentItem: "Hello world",
+                    isActive: false,
+                },
+            ],
+            isOpen: false,
+        },
+        {
+            id: "approach test",
+            title: "Approach test",
+             itemsOf: [
+                {
+                    titleItem: "Sale Drivers",
+                    contentItem: " We focus on enhancing all aspects of your brand's sales performance at retail locations.",
+                    isActive: true,
+                },
+                {
+                    titleItem: "Comperhensive",
+                    contentItem: "Hello world",
+                    isActive: false,
+                },
+            ],
+            isOpen: false,
+        },
+    ])
+
+
+    function activeSection(insideItem, itemsOf) {
+        setSlideDownItems(prevItems => 
+            prevItems.map(item => {
+                if (item.itemsOf === itemsOf) {
+                    return {
+                        ...item,
+                        itemsOf: item.itemsOf.map(i => ({
+                            ...i,
+                            isActive: i.titleItem === insideItem.titleItem
+                        }))
+                    }
+                }
+                return item
+            })
+        )
+    }
+
+   function activeSection2(insideItem, itemsOf) {
+        setSlideDownItems2(prevItems => 
+            prevItems.map(item => {
+                if (item.itemsOf === itemsOf) {
+                    return {
+                        ...item,
+                        itemsOf: item.itemsOf.map(i => ({
+                            ...i,
+                            isActive: i.titleItem === insideItem.titleItem
+                        }))
+                    }
+                }
+                return item
+            })
+        )
+    }
+
+    
+    function activeSection3(insideItem, itemsOf) {
+        setSlideDownItems3(prevItems => 
+            prevItems.map(item => {
+                if (item.itemsOf === itemsOf) {
+                    return {
+                        ...item,
+                        itemsOf: item.itemsOf.map(i => ({
+                            ...i,
+                            isActive: i.titleItem === insideItem.titleItem
+                        }))
+                    }
+                }
+                return item
+            })
+        )
+    }
+
+        function activeSection4(insideItem, itemsOf) {
+        setSlideDownItems4(prevItems => 
+            prevItems.map(item => {
+                if (item.itemsOf === itemsOf) {
+                    return {
+                        ...item,
+                        itemsOf: item.itemsOf.map(i => ({
+                            ...i,
+                            isActive: i.titleItem === insideItem.titleItem
+                        }))
+                    }
+                }
+                return item
+            })
+        )
+    }
+
+     function activeSection5(insideItem, itemsOf) {
+        setSlideDownItems5(prevItems => 
+            prevItems.map(item => {
+                if (item.itemsOf === itemsOf) {
+                    return {
+                        ...item,
+                        itemsOf: item.itemsOf.map(i => ({
+                            ...i,
+                            isActive: i.titleItem === insideItem.titleItem
+                        }))
+                    }
+                }
+                return item
+            })
+        )
+    }
+
 
 
     return (
@@ -258,76 +457,27 @@ export default function Services() {
                                                         <div className="pt-6">
                                                             <div className="">
                                                                 <div className="flex gap-5 mb-3">
-                                                                    <div onClick={() => activeSection(0)} className={`relative cursor-pointer h-[110px] w-[300px]  flex justify-center items-center ${activeChildIndex == 0 ? 'bg-brand' : 'bg-gray-200'}`}>
-                                                                        <div className="font-bold">
-                                                                            Sale Drivers
-                                                                        </div>
+                                                                    {
+                                                                        item?.itemsOf.map( (insideItem) =>(
+                                                                        <div key={insideItem.titleItem} onClick={() => activeSection(insideItem, item.itemsOf)} className={`relative cursor-pointer h-[110px] w-[300px]  flex justify-center items-center ${insideItem.isActive ? 'bg-brand' : 'bg-gray-200'}`}>
+                                                                            <div className="font-bold">
+                                                                                {insideItem.titleItem}
+                                                                            </div>
 
-                                                                        <div className="absolute top-0 left-[25px] transition-all duration-300 ease-in-out w-0 h-0 border-l-[16px] border-l-transparent border-r-[16px] border-r-transparent border-t-[16px] border-t-white">
-                                                                        </div>
-                                                                    </div>
-                                                                    <div onClick={() => activeSection(0.1)} className={`relative cursor-pointer h-[110px] w-[300px]  flex justify-center items-center ${activeChildIndex == 0.1 ? 'bg-brand' : 'bg-gray-200'}`}>
-                                                                        <div className="font-bold">
-                                                                            Comperhensive
-                                                                        </div>
-                                                                        <div className="absolute top-0 left-[25px] transition-all duration-300 ease-in-out w-0 h-0 border-l-[16px] border-l-transparent border-r-[16px] border-r-transparent border-t-[16px] border-t-white">
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                                {activeChildIndex == 0 ? (
-                                                                    <div className="">
-                                                                        We focus on enhancing all aspects of your brand's sales performance at retail locations.
-                                                                    </div>
-                                                                ) :
-                                                                    (
-                                                                        <div className="pt-4">
-                                                                            <h3 className="mb-4 font-bold text-xl">Our team is equipped to</h3>
-                                                                            <div>
-                                                                                <div className="grid grid-cols-4 gap-3">
-                                                                                    <div>
-                                                                                        <div className="w-[40px] h-[3px] bg-amber-300 mb-1"></div>
-                                                                                        <div>
-                                                                                            Introduce products to retailers.
-                                                                                        </div>
-                                                                                    </div>
-                                                                                    <div>
-                                                                                        <div className="w-[40px] h-[3px] bg-amber-300 mb-1"></div>
-                                                                                        <div>
-                                                                                            Introduce products to retailers.
-                                                                                        </div>
-                                                                                    </div>
-                                                                                    <div>
-                                                                                        <div className="w-[40px] h-[3px] bg-amber-300 mb-1"></div>
-                                                                                        <div>
-                                                                                            Introduce products to retailers.
-                                                                                        </div>
-                                                                                    </div>
-                                                                                    <div>
-                                                                                        <div className="w-[40px] h-[3px] bg-amber-300 mb-1"></div>
-                                                                                        <div>
-                                                                                            Introduce products to retailers.
-                                                                                        </div>
-                                                                                    </div>
-                                                                                    <div>
-                                                                                        <div className="w-[40px] h-[3px] bg-amber-300 mb-1"></div>
-                                                                                        <div>
-                                                                                            Introduce products to retailers.
-                                                                                        </div>
-                                                                                    </div>
-                                                                                    <div>
-                                                                                        <div className="w-[40px] h-[3px] bg-amber-300 mb-1"></div>
-                                                                                        <div>
-                                                                                            Introduce products to retailers.
-                                                                                        </div>
-                                                                                    </div>
-
-                                                                                </div>
+                                                                            <div className="absolute top-0 left-[25px] transition-all duration-300 ease-in-out w-0 h-0 border-l-[16px] border-l-transparent border-r-[16px] border-r-transparent border-t-[16px] border-t-white">
                                                                             </div>
                                                                         </div>
-                                                                    )
-
+                                                                        ))
+                                                                    }
+                                                                    
+                                                                </div>
+                                                                {item?.itemsOf.map( (insideItem) =>(
+                                                                        <div  key={insideItem.titleItem} className="">
+                                                                            {insideItem.isActive && insideItem.contentItem}
+                                                                           
+                                                                        </div>
+                                                                    )) 
                                                                 }
-
                                                             </div>
                                                         </div>
                                                     </Collapse>
@@ -341,9 +491,8 @@ export default function Services() {
 
                                 )
                             }
-                            {
-
-                                activeTabIndex == 1 && (
+                             {
+                                (activeTabIndex == 1 ) && (
                                     <div className="mb-4">
                                         {
                                             slideDownItems2.map((item) =>
@@ -359,7 +508,6 @@ export default function Services() {
                                                                         }`}
                                                                 />
                                                                 <h2 className="text-xl font-semibold text-gray-900">{item.title}</h2>
-
                                                             </div>
                                                         )}
                                                         defaultOpen={item.isOpen}
@@ -368,71 +516,27 @@ export default function Services() {
                                                         <div className="pt-6">
                                                             <div className="">
                                                                 <div className="flex gap-5 mb-3">
-                                                                    <div onClick={() => activeSection(0)} className={`cursor-pointer h-[110px] w-[300px]  flex justify-center items-center ${activeChildIndex == 0 ? 'bg-amber-300' : 'bg-gray-200'}`}>
-                                                                        <div className="font-bold">
-                                                                            Sale Drivers
-                                                                        </div>
-                                                                    </div>
-                                                                    <div onClick={() => activeSection(0.1)} className={`cursor-pointer h-[110px] w-[300px]  flex justify-center items-center ${activeChildIndex == 0.1 ? 'bg-amber-300' : 'bg-gray-200'}`}>
-                                                                        <div className="font-bold">
-                                                                            Comperhensive
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                                {activeChildIndex == 0 ? (
-                                                                    <div className="">
-                                                                        We focus on enhancing all aspects of your brand's sales performance at retail locations.
-                                                                    </div>
-                                                                ) :
-                                                                    (
-                                                                        <div className="pt-4">
-                                                                            <h3 className="mb-4 font-bold text-xl">Our team is equipped to</h3>
-                                                                            <div>
-                                                                                <div className="grid grid-cols-4 gap-3">
-                                                                                    <div>
-                                                                                        <div className="w-[40px] h-[3px] bg-amber-300 mb-1"></div>
-                                                                                        <div>
-                                                                                            Introduce products to retailers.
-                                                                                        </div>
-                                                                                    </div>
-                                                                                    <div>
-                                                                                        <div className="w-[40px] h-[3px] bg-amber-300 mb-1"></div>
-                                                                                        <div>
-                                                                                            Introduce products to retailers.
-                                                                                        </div>
-                                                                                    </div>
-                                                                                    <div>
-                                                                                        <div className="w-[40px] h-[3px] bg-amber-300 mb-1"></div>
-                                                                                        <div>
-                                                                                            Introduce products to retailers.
-                                                                                        </div>
-                                                                                    </div>
-                                                                                    <div>
-                                                                                        <div className="w-[40px] h-[3px] bg-amber-300 mb-1"></div>
-                                                                                        <div>
-                                                                                            Introduce products to retailers.
-                                                                                        </div>
-                                                                                    </div>
-                                                                                    <div>
-                                                                                        <div className="w-[40px] h-[3px] bg-amber-300 mb-1"></div>
-                                                                                        <div>
-                                                                                            Introduce products to retailers.
-                                                                                        </div>
-                                                                                    </div>
-                                                                                    <div>
-                                                                                        <div className="w-[40px] h-[3px] bg-amber-300 mb-1"></div>
-                                                                                        <div>
-                                                                                            Introduce products to retailers.
-                                                                                        </div>
-                                                                                    </div>
+                                                                    {
+                                                                        item?.itemsOf.map( (insideItem) =>(
+                                                                        <div key={insideItem.titleItem} onClick={() => activeSection2(insideItem, item.itemsOf)} className={`relative cursor-pointer h-[110px] w-[300px]  flex justify-center items-center ${insideItem.isActive ? 'bg-brand' : 'bg-gray-200'}`}>
+                                                                            <div className="font-bold">
+                                                                                {insideItem.titleItem}
+                                                                            </div>
 
-                                                                                </div>
+                                                                            <div className="absolute top-0 left-[25px] transition-all duration-300 ease-in-out w-0 h-0 border-l-[16px] border-l-transparent border-r-[16px] border-r-transparent border-t-[16px] border-t-white">
                                                                             </div>
                                                                         </div>
-                                                                    )
-
+                                                                        ))
+                                                                    }
+                                                                    
+                                                                </div>
+                                                                {item?.itemsOf.map( (insideItem) =>(
+                                                                        <div  key={insideItem.titleItem} className="">
+                                                                            {insideItem.isActive && insideItem.contentItem}
+                                                                           
+                                                                        </div>
+                                                                    )) 
                                                                 }
-
                                                             </div>
                                                         </div>
                                                     </Collapse>
@@ -443,13 +547,15 @@ export default function Services() {
 
 
                                     </div>
+
                                 )
                             }
-                            {
-                                activeTabIndex == 2 && (
+
+                              {
+                                (activeTabIndex == 2 ) && (
                                     <div className="mb-4">
                                         {
-                                            slideDownItems.map((item) =>
+                                            slideDownItems3.map((item) =>
                                             (
                                                 <div key={item.id} className="mb-8 pb-6">
                                                     <Collapse
@@ -462,7 +568,6 @@ export default function Services() {
                                                                         }`}
                                                                 />
                                                                 <h2 className="text-xl font-semibold text-gray-900">{item.title}</h2>
-
                                                             </div>
                                                         )}
                                                         defaultOpen={item.isOpen}
@@ -471,71 +576,27 @@ export default function Services() {
                                                         <div className="pt-6">
                                                             <div className="">
                                                                 <div className="flex gap-5 mb-3">
-                                                                    <div onClick={() => activeSection(0)} className={`cursor-pointer h-[110px] w-[300px]  flex justify-center items-center ${activeChildIndex == 0 ? 'bg-amber-300' : 'bg-gray-200'}`}>
-                                                                        <div className="font-bold">
-                                                                            Sale Drivers
-                                                                        </div>
-                                                                    </div>
-                                                                    <div onClick={() => activeSection(0.1)} className={`cursor-pointer h-[110px] w-[300px]  flex justify-center items-center ${activeChildIndex == 0.1 ? 'bg-amber-300' : 'bg-gray-200'}`}>
-                                                                        <div className="font-bold">
-                                                                            Comperhensive
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                                {activeChildIndex == 0 ? (
-                                                                    <div className="">
-                                                                        We focus on enhancing all aspects of your brand's sales performance at retail locations.
-                                                                    </div>
-                                                                ) :
-                                                                    (
-                                                                        <div className="pt-4">
-                                                                            <h3 className="mb-4 font-bold text-xl">Our team is equipped to</h3>
-                                                                            <div>
-                                                                                <div className="grid grid-cols-4 gap-3">
-                                                                                    <div>
-                                                                                        <div className="w-[40px] h-[3px] bg-amber-300 mb-1"></div>
-                                                                                        <div>
-                                                                                            Introduce products to retailers.
-                                                                                        </div>
-                                                                                    </div>
-                                                                                    <div>
-                                                                                        <div className="w-[40px] h-[3px] bg-amber-300 mb-1"></div>
-                                                                                        <div>
-                                                                                            Introduce products to retailers.
-                                                                                        </div>
-                                                                                    </div>
-                                                                                    <div>
-                                                                                        <div className="w-[40px] h-[3px] bg-amber-300 mb-1"></div>
-                                                                                        <div>
-                                                                                            Introduce products to retailers.
-                                                                                        </div>
-                                                                                    </div>
-                                                                                    <div>
-                                                                                        <div className="w-[40px] h-[3px] bg-amber-300 mb-1"></div>
-                                                                                        <div>
-                                                                                            Introduce products to retailers.
-                                                                                        </div>
-                                                                                    </div>
-                                                                                    <div>
-                                                                                        <div className="w-[40px] h-[3px] bg-amber-300 mb-1"></div>
-                                                                                        <div>
-                                                                                            Introduce products to retailers.
-                                                                                        </div>
-                                                                                    </div>
-                                                                                    <div>
-                                                                                        <div className="w-[40px] h-[3px] bg-amber-300 mb-1"></div>
-                                                                                        <div>
-                                                                                            Introduce products to retailers.
-                                                                                        </div>
-                                                                                    </div>
+                                                                    {
+                                                                        item?.itemsOf.map( (insideItem) =>(
+                                                                        <div key={insideItem.titleItem} onClick={() => activeSection3(insideItem, item.itemsOf)} className={`relative cursor-pointer h-[110px] w-[300px]  flex justify-center items-center ${insideItem.isActive ? 'bg-brand' : 'bg-gray-200'}`}>
+                                                                            <div className="font-bold">
+                                                                                {insideItem.titleItem}
+                                                                            </div>
 
-                                                                                </div>
+                                                                            <div className="absolute top-0 left-[25px] transition-all duration-300 ease-in-out w-0 h-0 border-l-[16px] border-l-transparent border-r-[16px] border-r-transparent border-t-[16px] border-t-white">
                                                                             </div>
                                                                         </div>
-                                                                    )
-
+                                                                        ))
+                                                                    }
+                                                                    
+                                                                </div>
+                                                                {item?.itemsOf.map( (insideItem) =>(
+                                                                        <div  key={insideItem.titleItem} className="">
+                                                                            {insideItem.isActive && insideItem.contentItem}
+                                                                           
+                                                                        </div>
+                                                                    )) 
                                                                 }
-
                                                             </div>
                                                         </div>
                                                     </Collapse>
@@ -546,13 +607,15 @@ export default function Services() {
 
 
                                     </div>
+
                                 )
                             }
-                            {
-                                activeTabIndex == 3 && (
+
+                             {
+                                (activeTabIndex == 3 ) && (
                                     <div className="mb-4">
                                         {
-                                            slideDownItems2.map((item) =>
+                                            slideDownItems4.map((item) =>
                                             (
                                                 <div key={item.id} className="mb-8 pb-6">
                                                     <Collapse
@@ -565,7 +628,6 @@ export default function Services() {
                                                                         }`}
                                                                 />
                                                                 <h2 className="text-xl font-semibold text-gray-900">{item.title}</h2>
-
                                                             </div>
                                                         )}
                                                         defaultOpen={item.isOpen}
@@ -574,71 +636,27 @@ export default function Services() {
                                                         <div className="pt-6">
                                                             <div className="">
                                                                 <div className="flex gap-5 mb-3">
-                                                                    <div onClick={() => activeSection(0)} className={`cursor-pointer h-[110px] w-[300px]  flex justify-center items-center ${activeChildIndex == 0 ? 'bg-amber-300' : 'bg-gray-200'}`}>
-                                                                        <div className="font-bold">
-                                                                            Sale Drivers
-                                                                        </div>
-                                                                    </div>
-                                                                    <div onClick={() => activeSection(0.1)} className={`cursor-pointer h-[110px] w-[300px]  flex justify-center items-center ${activeChildIndex == 0.1 ? 'bg-amber-300' : 'bg-gray-200'}`}>
-                                                                        <div className="font-bold">
-                                                                            Comperhensive
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                                {activeChildIndex == 0 ? (
-                                                                    <div className="">
-                                                                        We focus on enhancing all aspects of your brand's sales performance at retail locations.
-                                                                    </div>
-                                                                ) :
-                                                                    (
-                                                                        <div className="pt-4">
-                                                                            <h3 className="mb-4 font-bold text-xl">Our team is equipped to</h3>
-                                                                            <div>
-                                                                                <div className="grid grid-cols-4 gap-3">
-                                                                                    <div>
-                                                                                        <div className="w-[40px] h-[3px] bg-amber-300 mb-1"></div>
-                                                                                        <div>
-                                                                                            Introduce products to retailers.
-                                                                                        </div>
-                                                                                    </div>
-                                                                                    <div>
-                                                                                        <div className="w-[40px] h-[3px] bg-amber-300 mb-1"></div>
-                                                                                        <div>
-                                                                                            Introduce products to retailers.
-                                                                                        </div>
-                                                                                    </div>
-                                                                                    <div>
-                                                                                        <div className="w-[40px] h-[3px] bg-amber-300 mb-1"></div>
-                                                                                        <div>
-                                                                                            Introduce products to retailers.
-                                                                                        </div>
-                                                                                    </div>
-                                                                                    <div>
-                                                                                        <div className="w-[40px] h-[3px] bg-amber-300 mb-1"></div>
-                                                                                        <div>
-                                                                                            Introduce products to retailers.
-                                                                                        </div>
-                                                                                    </div>
-                                                                                    <div>
-                                                                                        <div className="w-[40px] h-[3px] bg-amber-300 mb-1"></div>
-                                                                                        <div>
-                                                                                            Introduce products to retailers.
-                                                                                        </div>
-                                                                                    </div>
-                                                                                    <div>
-                                                                                        <div className="w-[40px] h-[3px] bg-amber-300 mb-1"></div>
-                                                                                        <div>
-                                                                                            Introduce products to retailers.
-                                                                                        </div>
-                                                                                    </div>
+                                                                    {
+                                                                        item?.itemsOf.map( (insideItem) =>(
+                                                                        <div key={insideItem.titleItem} onClick={() => activeSection4(insideItem, item.itemsOf)} className={`relative cursor-pointer h-[110px] w-[300px]  flex justify-center items-center ${insideItem.isActive ? 'bg-brand' : 'bg-gray-200'}`}>
+                                                                            <div className="font-bold">
+                                                                                {insideItem.titleItem}
+                                                                            </div>
 
-                                                                                </div>
+                                                                            <div className="absolute top-0 left-[25px] transition-all duration-300 ease-in-out w-0 h-0 border-l-[16px] border-l-transparent border-r-[16px] border-r-transparent border-t-[16px] border-t-white">
                                                                             </div>
                                                                         </div>
-                                                                    )
-
+                                                                        ))
+                                                                    }
+                                                                    
+                                                                </div>
+                                                                {item?.itemsOf.map( (insideItem) =>(
+                                                                        <div  key={insideItem.titleItem} className="">
+                                                                            {insideItem.isActive && insideItem.contentItem}
+                                                                           
+                                                                        </div>
+                                                                    )) 
                                                                 }
-
                                                             </div>
                                                         </div>
                                                     </Collapse>
@@ -649,13 +667,15 @@ export default function Services() {
 
 
                                     </div>
+
                                 )
                             }
-                            {
-                                activeTabIndex == 4 && (
+
+                             {
+                                (activeTabIndex == 4 ) && (
                                     <div className="mb-4">
                                         {
-                                            slideDownItems.map((item) =>
+                                            slideDownItems5.map((item) =>
                                             (
                                                 <div key={item.id} className="mb-8 pb-6">
                                                     <Collapse
@@ -668,7 +688,6 @@ export default function Services() {
                                                                         }`}
                                                                 />
                                                                 <h2 className="text-xl font-semibold text-gray-900">{item.title}</h2>
-
                                                             </div>
                                                         )}
                                                         defaultOpen={item.isOpen}
@@ -677,71 +696,27 @@ export default function Services() {
                                                         <div className="pt-6">
                                                             <div className="">
                                                                 <div className="flex gap-5 mb-3">
-                                                                    <div onClick={() => activeSection(0)} className={`cursor-pointer h-[110px] w-[300px]  flex justify-center items-center ${activeChildIndex == 0 ? 'bg-amber-300' : 'bg-gray-200'}`}>
-                                                                        <div className="font-bold">
-                                                                            Sale Drivers
-                                                                        </div>
-                                                                    </div>
-                                                                    <div onClick={() => activeSection(0.1)} className={`cursor-pointer h-[110px] w-[300px]  flex justify-center items-center ${activeChildIndex == 0.1 ? 'bg-amber-300' : 'bg-gray-200'}`}>
-                                                                        <div className="font-bold">
-                                                                            Comperhensive
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                                {activeChildIndex == 0 ? (
-                                                                    <div className="">
-                                                                        We focus on enhancing all aspects of your brand's sales performance at retail locations.
-                                                                    </div>
-                                                                ) :
-                                                                    (
-                                                                        <div className="pt-4">
-                                                                            <h3 className="mb-4 font-bold text-xl">Our team is equipped to</h3>
-                                                                            <div>
-                                                                                <div className="grid grid-cols-4 gap-3">
-                                                                                    <div>
-                                                                                        <div className="w-[40px] h-[3px] bg-amber-300 mb-1"></div>
-                                                                                        <div>
-                                                                                            Introduce products to retailers.
-                                                                                        </div>
-                                                                                    </div>
-                                                                                    <div>
-                                                                                        <div className="w-[40px] h-[3px] bg-amber-300 mb-1"></div>
-                                                                                        <div>
-                                                                                            Introduce products to retailers.
-                                                                                        </div>
-                                                                                    </div>
-                                                                                    <div>
-                                                                                        <div className="w-[40px] h-[3px] bg-amber-300 mb-1"></div>
-                                                                                        <div>
-                                                                                            Introduce products to retailers.
-                                                                                        </div>
-                                                                                    </div>
-                                                                                    <div>
-                                                                                        <div className="w-[40px] h-[3px] bg-amber-300 mb-1"></div>
-                                                                                        <div>
-                                                                                            Introduce products to retailers.
-                                                                                        </div>
-                                                                                    </div>
-                                                                                    <div>
-                                                                                        <div className="w-[40px] h-[3px] bg-amber-300 mb-1"></div>
-                                                                                        <div>
-                                                                                            Introduce products to retailers.
-                                                                                        </div>
-                                                                                    </div>
-                                                                                    <div>
-                                                                                        <div className="w-[40px] h-[3px] bg-amber-300 mb-1"></div>
-                                                                                        <div>
-                                                                                            Introduce products to retailers.
-                                                                                        </div>
-                                                                                    </div>
+                                                                    {
+                                                                        item?.itemsOf.map( (insideItem) =>(
+                                                                        <div key={insideItem.titleItem} onClick={() => activeSection5(insideItem, item.itemsOf)} className={`relative cursor-pointer h-[110px] w-[300px]  flex justify-center items-center ${insideItem.isActive ? 'bg-brand' : 'bg-gray-200'}`}>
+                                                                            <div className="font-bold">
+                                                                                {insideItem.titleItem}
+                                                                            </div>
 
-                                                                                </div>
+                                                                            <div className="absolute top-0 left-[25px] transition-all duration-300 ease-in-out w-0 h-0 border-l-[16px] border-l-transparent border-r-[16px] border-r-transparent border-t-[16px] border-t-white">
                                                                             </div>
                                                                         </div>
-                                                                    )
-
+                                                                        ))
+                                                                    }
+                                                                    
+                                                                </div>
+                                                                {item?.itemsOf.map( (insideItem) =>(
+                                                                        <div  key={insideItem.titleItem} className="">
+                                                                            {insideItem.isActive && insideItem.contentItem}
+                                                                           
+                                                                        </div>
+                                                                    )) 
                                                                 }
-
                                                             </div>
                                                         </div>
                                                     </Collapse>
@@ -752,8 +727,10 @@ export default function Services() {
 
 
                                     </div>
+
                                 )
                             }
+
                         </div>
                     </div>
 
