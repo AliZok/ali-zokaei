@@ -219,7 +219,7 @@ export default function Services() {
                                         </div>
                                         {
                                             item.title != "Hello World" && (
-                                                <div>
+                                                <div className="hidden md:block">
                                                     <div className="Square z-10 absolute right-[-10px] bottom-[37%] translate-y-[-50%] bg-brand w-[20px] h-[20px] rotate-45"></div>
                                                     <div className="Square z-9 absolute right-[-2px] bg-white w-[3px] h-[80px] !bottom-[-17px] translate-y-[-50%] "></div>
                                                 </div>
@@ -258,7 +258,7 @@ export default function Services() {
                                                         <div className="pt-6">
                                                             <div className="">
                                                                 <div className="flex gap-5 mb-3">
-                                                                    <div onClick={() => activeSection(0)} className={`relative cursor-pointer h-[110px] w-[300px]  flex justify-center items-center ${activeChildIndex == 0 ? 'bg-amber-300' : 'bg-gray-200'}`}>
+                                                                    <div onClick={() => activeSection(0)} className={`relative cursor-pointer h-[110px] w-[300px]  flex justify-center items-center ${activeChildIndex == 0 ? 'bg-brand' : 'bg-gray-200'}`}>
                                                                         <div className="font-bold">
                                                                             Sale Drivers
                                                                         </div>
@@ -266,7 +266,7 @@ export default function Services() {
                                                                         <div className="absolute top-0 left-[25px] transition-all duration-300 ease-in-out w-0 h-0 border-l-[16px] border-l-transparent border-r-[16px] border-r-transparent border-t-[16px] border-t-white">
                                                                         </div>
                                                                     </div>
-                                                                    <div onClick={() => activeSection(0.1)} className={`relative cursor-pointer h-[110px] w-[300px]  flex justify-center items-center ${activeChildIndex == 0.1 ? 'bg-amber-300' : 'bg-gray-200'}`}>
+                                                                    <div onClick={() => activeSection(0.1)} className={`relative cursor-pointer h-[110px] w-[300px]  flex justify-center items-center ${activeChildIndex == 0.1 ? 'bg-brand' : 'bg-gray-200'}`}>
                                                                         <div className="font-bold">
                                                                             Comperhensive
                                                                         </div>
