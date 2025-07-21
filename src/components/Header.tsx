@@ -107,7 +107,7 @@ export default function Header() {
                     <div className='bg-white h-[88vh] rounded-lg p-4'>
                         {headerItems.map((item) => {
                             return (
-                                <Link href={item.path} className={`${item.title == 'Home' ? 'text-brand' : ''} cursor-pointer hover:text-brand mb-4 block`} key={item.title} prefetch>
+                                <Link onClick={closeMobileMenu} href={item.path} className={`${item.title == 'Home' ? 'text-brand' : ''} cursor-pointer hover:text-brand mb-4 block`} key={item.title} prefetch>
                                     {item.title}
                                 </Link>
                             )
