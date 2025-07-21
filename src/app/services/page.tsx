@@ -443,7 +443,7 @@ export default function Services() {
                                                         trigger={(isOpen) => (
                                                             <div className="flex items-center gap-2">
                                                                 <div
-                                                                    className={`transition-all duration-300 ease-in-out w-0 h-0 border-l-[12px] border-l-transparent border-r-[12px] border-r-transparent border-t-[20px] border-t-yellow-400 ${isOpen
+                                                                    className={`transition-all duration-300 ease-in-out w-0 h-0 border-l-[12px] border-l-transparent border-r-[12px] border-r-transparent border-t-[20px] border-t-brand ${isOpen
                                                                         ? ""
                                                                         : "rotate-[-90deg]"
                                                                         }`}
@@ -502,7 +502,7 @@ export default function Services() {
                                                         trigger={(isOpen) => (
                                                             <div className="flex items-center gap-2">
                                                                 <div
-                                                                    className={`transition-all duration-300 ease-in-out w-0 h-0 border-l-[12px] border-l-transparent border-r-[12px] border-r-transparent border-t-[20px] border-t-yellow-400 ${isOpen
+                                                                    className={`transition-all duration-300 ease-in-out w-0 h-0 border-l-[12px] border-l-transparent border-r-[12px] border-r-transparent border-t-[20px] border-t-brand ${isOpen
                                                                         ? ""
                                                                         : "rotate-[-90deg]"
                                                                         }`}
@@ -562,7 +562,7 @@ export default function Services() {
                                                         trigger={(isOpen) => (
                                                             <div className="flex items-center gap-2">
                                                                 <div
-                                                                    className={`transition-all duration-300 ease-in-out w-0 h-0 border-l-[12px] border-l-transparent border-r-[12px] border-r-transparent border-t-[20px] border-t-yellow-400 ${isOpen
+                                                                    className={`transition-all duration-300 ease-in-out w-0 h-0 border-l-[12px] border-l-transparent border-r-[12px] border-r-transparent border-t-[20px] border-t-brand ${isOpen
                                                                         ? ""
                                                                         : "rotate-[-90deg]"
                                                                         }`}
@@ -622,7 +622,7 @@ export default function Services() {
                                                         trigger={(isOpen) => (
                                                             <div className="flex items-center gap-2">
                                                                 <div
-                                                                    className={`transition-all duration-300 ease-in-out w-0 h-0 border-l-[12px] border-l-transparent border-r-[12px] border-r-transparent border-t-[20px] border-t-yellow-400 ${isOpen
+                                                                    className={`transition-all duration-300 ease-in-out w-0 h-0 border-l-[12px] border-l-transparent border-r-[12px] border-r-transparent border-t-[20px] border-t-brand ${isOpen
                                                                         ? ""
                                                                         : "rotate-[-90deg]"
                                                                         }`}
@@ -682,7 +682,7 @@ export default function Services() {
                                                         trigger={(isOpen) => (
                                                             <div className="flex items-center gap-2">
                                                                 <div
-                                                                    className={`transition-all duration-300 ease-in-out w-0 h-0 border-l-[12px] border-l-transparent border-r-[12px] border-r-transparent border-t-[20px] border-t-yellow-400 ${isOpen
+                                                                    className={`transition-all duration-300 ease-in-out w-0 h-0 border-l-[12px] border-l-transparent border-r-[12px] border-r-transparent border-t-[20px] border-t-brand ${isOpen
                                                                         ? ""
                                                                         : "rotate-[-90deg]"
                                                                         }`}
