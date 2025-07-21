@@ -184,11 +184,11 @@ export default function Services() {
                         </div>
                     </div>
                     <div className="">
-                        <div className="flex justify-center">
+                        <div className="flex justify-center flex-col md:!flex-row">
                             {
                                 TabItems.map((item, index) => (
                                     <div onClick={() => activeTab(item, index)} key={index} className={`${index == activeTabIndex ? 'bg-black text-white' : 'bg-[#e3e3e3]'} relative flex-1 flex-auto`}>
-                                        <div className="flex gap-3 items-center justify-center py-10 px-2 cursor-pointer">
+                                        <div className="flex gap-3 items-center justify-start md:justify-center py-3 md:py-10 px-2 cursor-pointer">
                                             <div>
                                                 {
                                                     index == activeTabIndex ? (
