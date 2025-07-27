@@ -33,7 +33,7 @@ export default function HomeSlider() {
       <div className="min-h-[100vh] w-full">
         <div className="embla overflow-hidden" ref={emblaRef}>
           <div className="embla__container flex">
-            {['/images/test/car-test.webp', '/images/test/wat-test.jpg', '/images/test/wat-test2.jpg'].map((src, index) => (
+            {['/images/test/car-test.webp', '/images/test/wat-test.jpg', '/images/test/stares.jpg'].map((src, index) => (
               <div className="embla__slide flex-[0_0_100%] min-w-0 relative h-[100vh] text-white" key={index}>
                 <div
                   data-aos="fade-down"

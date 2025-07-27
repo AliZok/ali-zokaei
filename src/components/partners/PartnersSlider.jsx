@@ -7,7 +7,7 @@ import Image from 'next/image'
 const SLIDES = [
     { src: '/images/test/car-test.webp', alt: 'Car showcase' },
     { src: '/images/test/wat-test.jpg', alt: 'Waterfront view' },
-    { src: '/images/test/wat-test2.jpg', alt: 'Alternative waterfront view' }
+    { src: '/images/test/stares.jpg', alt: 'Alternative waterfront view' }
 ];
 
 export default function PartnersSlider() {
@@ -162,7 +162,7 @@ export default function PartnersSlider() {
 //             <div className="min-h-[100vh] w-full">
 //                 <div className="embla overflow-hidden" ref={emblaRef}>
 //                     <div className="embla__container flex">
-//                         {['/images/test/car-test.webp', '/images/test/wat-test.jpg', '/images/test/wat-test2.jpg'].map((src, index) => (
+//                         {['/images/test/car-test.webp', '/images/test/wat-test.jpg', '/images/test/stares.jpg'].map((src, index) => (
 //                             <div className="embla__slide flex-[0_0_100%] min-w-0 relative h-[100vh] text-white" key={index}>
 //                                 <div
 //                                     data-aos="fade-down"
