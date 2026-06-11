@@ -1,6 +1,7 @@
 
 "use client"
 import useEmblaCarousel from 'embla-carousel-react'
+import { useEffect } from 'react'
 import { usePageDataStore } from '@/store/test';
 import { testDataService } from '@/api'
 import { motion } from 'framer-motion';
@@ -18,7 +19,9 @@ export default function EmblaCarousel() {
 
     }
   }
-  fetchUsers()
+  useEffect(() => {
+    fetchUsers()
+  }, [])
 
   return (
     <div>

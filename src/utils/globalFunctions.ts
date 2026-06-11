@@ -41,9 +41,11 @@ export const myFunctions = {
     },
 
     Logout: () => {
-        localStorage.removeItem("token")
-        // navigate("/login")
-        localStorage.removeItem('refreshToken');
+        if (typeof window !== 'undefined') {
+            localStorage.removeItem("token");
+            // navigate("/login")
+            localStorage.removeItem('refreshToken');
+        }
     },
 
     shamsiToGregurian: (persianDateTime: string) => {
