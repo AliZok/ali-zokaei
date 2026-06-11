@@ -7,6 +7,7 @@ import "slick-carousel/slick/slick-theme.css";
 import AOSInitializer from '@/components/AOSInitializer';
 import Header from "@/components/Header"
 import Footer from "@/components/Footer"
+import SplashIntro from '@/components/SplashIntro'
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -33,6 +34,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <SplashIntro />
         <AOSInitializer />
         <Header />
         {children}
