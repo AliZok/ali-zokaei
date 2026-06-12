@@ -1,7 +1,11 @@
 // lib/api-client.ts
 import axios, { AxiosInstance, } from 'axios';
 
-const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL;
+// Prefer explicit public API URL, fall back to other env vars (VERCEL_URL) for server
+const API_BASE_URL =
+  process.env.NEXT_PUBLIC_API_BASE_URL ||
+  process.env.NEXT_PUBLIC_API_URL ||
+  (process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : undefined);
 
 const apiClient: AxiosInstance = axios.create({
   baseURL: API_BASE_URL,
